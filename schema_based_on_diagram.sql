@@ -1,5 +1,5 @@
 CREATE DATABASE clinic;
-
+/* Creates patients table*/
 CREATE TABLE patients (
     id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(255),
@@ -7,6 +7,7 @@ CREATE TABLE patients (
     PRIMARY KEY(id)
 );
 
+/* Creates treatments table*/
 CREATE TABLE treatments (
     id INT GENERATED ALWAYS AS IDENTITY,
     type VARCHAR(255),
@@ -14,6 +15,7 @@ CREATE TABLE treatments (
     PRIMARY KEY(id)
 );
 
+/* Creates medical_histories table*/
 CREATE TABLE medical_histories (
     id INT GENERATED ALWAYS AS IDENTITY,
     admitted_at TIMESTAMP,
@@ -23,6 +25,7 @@ CREATE TABLE medical_histories (
     CONSTRAINT fk_patient FOREIGN KEY(patient_id) REFERENCES patients(id) ON DELETE CASCADE
 );
 
+/* Creates invoices table*/
 CREATE TABLE invoices (
     id INT GENERATED ALWAYS AS IDENTITY,
     total_amount DECIMAL,
@@ -33,6 +36,7 @@ CREATE TABLE invoices (
     CONSTRAINT fk_medical_history FOREIGN KEY(medical_history__id) REFERENCES medical_histories(id) ON DELETE CASCADE
 );
 
+/* Creates invoice_items table*/
 CREATE TABLE invoice_items (
     id INT GENERATED ALWAYS AS IDENTITY,
     unit_price DECIMAL,
@@ -45,7 +49,7 @@ CREATE TABLE invoice_items (
     CONSTRAINT fk_invoice FOREIGN KEY(invoice_id) REFERENCES invoices(id) ON DELETE CASCADE
 );
 
-
+/* Creates medical_treatment_histories table*/
 CREATE TABLE medical_treatment_histories (
     medical_id INT NOT NULL REFERENCES medical_histories(id),
     treatment_id INT NOT NULL REFERENCES treatments(id),
