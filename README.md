@@ -74,6 +74,17 @@ database to create data structure. Create a table to store animals' information,
 
 - [Live Demo Link]()
 
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- DATABASE DIAGRAM -->
+
+## 🚀 Database Diagram <a name="Diagram"></a>
+
+- ![drawSQL-vet-clinic-export-2023-01-24](https://user-images.githubusercontent.com/107632780/214262350-d331d799-896f-4283-9440-d03bee869a32.png)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
